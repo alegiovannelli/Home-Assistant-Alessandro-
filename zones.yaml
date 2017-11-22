@@ -1,0 +1,14 @@
+  #Lavoro Alessandro
+  - name: Lavoro Alessandro
+    latitude: !secret latitude_loc_lavoro_alessandro
+    longitude: !secret longitude_loc_lavoro_alessandro
+    radius: 150
+    icon: mdi:worker
+  
+  #Asilo Emanuele
+  - name: Asilo Emanuele
+    latitude: !secret latitude_loc_asilo_emanuele
+    longitude: !secret longitude_loc_asilo_emanuele
+    radius: 150
+    icon: mdi:bus-school
+  

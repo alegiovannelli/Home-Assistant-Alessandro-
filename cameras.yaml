@@ -1,0 +1,14 @@
+  #Sricam SP017
+  - platform: ffmpeg
+    name: SriCAM SP017
+    input: rtsp://admin:Volvov70@192.168.1.60/onvif2
+    extra_arguments: -q:v 2 -pred 1
+    
+  #Zanzito photo/camera - Samsung Galaxy S8 Plus Alessandro
+  - platform: mqtt
+    topic: zanzito/shared_pictures/galaxy_s8_plus
+    name: Zanzito Camera
+    
+  - platform: mqtt
+    topic: zanzito/galaxy_s8_plus/picture
+    name: Zanzito Camera 2

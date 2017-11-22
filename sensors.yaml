@@ -1,0 +1,121 @@
+  # Weather now
+  - platform: yr
+    name: Meteo
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - highClouds
+      - dewpointTemperature
+
+  # Weather forecast +24 hours
+  - platform: yr
+    name: Meteo - Previsioni a 24 ore
+    forecast: 24
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - highClouds
+      - dewpointTemperature
+
+  #System Monitor
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: disk_free
+        arg: /
+      - type: disk_use
+        arg: /
+      - type: memory_free
+      - type: memory_use_percent
+      - type: memory_use
+      - type: swap_use_percent
+      - type: swap_use
+      - type: swap_free
+      - type: load_1m
+      - type: load_5m
+      - type: load_15m
+      - type: ipv4_address
+        arg: wlan0
+      - type: processor_use
+      - type: last_boot
+      - type: since_last_boot
+  
+  #Sensore temperatura CPU
+  - platform: command_line
+    name: Temperatura CPU
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # If errors occur, remove degree symbol below
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) | round(2) }}'
+    
+  #Speedtest
+  - platform: speedtest
+    minute: 30
+    hour:
+      - 0
+      - 6
+      - 12
+      - 18
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+      
+  # Template sensors
+  - platform: template
+    sensors:
+
+      temperatura_attuale_soggiorno:
+        value_template: '{{ states.climate.soggiorno_termostato_a_parete_soggiorno.attributes.current_temperature }}'
+        unit_of_measurement: '°C'
+  
+      temperatura_attuale_cucina:
+        value_template: '{{ states.climate.cucina_termostato_a_parete_cucina.attributes.current_temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_attuale_camera:
+        value_template: '{{ states.climate.camera_termostato_a_parete_camera.attributes.current_temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_attuale_cameretta:
+        value_template: '{{ states.climate.cameretta_termostato_a_parete_cameretta.attributes.current_temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_attuale_bagno:
+        value_template: '{{ states.climate.bagno_termostato_a_parete_bagno.attributes.current_temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_programmata_soggiorno:
+        value_template: '{{ states.climate.soggiorno_termostato_a_parete_soggiorno.attributes.temperature }}'
+        unit_of_measurement: '°C'
+  
+      temperatura_programmata_cucina:
+        value_template: '{{ states.climate.cucina_termostato_a_parete_cucina.attributes.temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_programmata_camera:
+        value_template: '{{ states.climate.camera_termostato_a_parete_camera.attributes.temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_programmata_cameretta:
+        value_template: '{{ states.climate.cameretta_termostato_a_parete_cameretta.attributes.temperature }}'
+        unit_of_measurement: '°C'
+      
+      temperatura_programmata_bagno:
+        value_template: '{{ states.climate.bagno_termostato_a_parete_bagno.attributes.temperature }}'
+        unit_of_measurement: '°C'

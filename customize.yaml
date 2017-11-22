@@ -1,0 +1,68 @@
+    #Customize System Descriptions
+    sensor.cpu_used:
+      friendly_name: Utilizzo CPU
+      
+    sensor.disk_free_:
+      friendly_name: Spazio disco libero
+      
+    sensor.disk_used_:
+      friendly_name: Spazio disco usato
+      
+    sensor.disk_used__2:
+      friendly_name: Spazio disco usato
+      
+    sensor.ram_available:
+      friendly_name: Memoria disponibile
+      
+    sensor.ram_used:
+      friendly_name: Memoria usata
+      
+    sensor.ram_used_2:
+      friendly_name: Memoria usata
+      
+    sensor.swap_free:
+      friendly_name: Memoria SWAP libera
+
+    sensor.swap_used:
+      friendly_name: Memoria SWAP usata
+      
+    sensor.swap_used_2:
+      friendly_name: Memoria SWAP usata
+      
+    sensor.average_load_1m:
+      friendly_name: Carico di sistema 1m
+      
+    sensor.average_load_5m:
+      friendly_name: Carico di sistema 5m
+      
+    sensor.average_load_15m:
+      friendly_name: Carico di sistema 15m
+      
+    sensor.ipv4_address_wlan0:
+      friendly_name: Indirizzo IP
+      
+    sensor.last_boot:
+      friendly_name: Ultimo AVVIO Sistema
+      
+    sensor.since_last_boot:
+      friendly_name: Tempo di attività
+      
+    sensor.temperatura_cpu:
+      friendly_name: Temperatura CPU
+      
+    # Customize MAX! EQ-3 sensors
+    
+    sensor.temperatura_attuale_soggiorno:
+      friendly_name: Soggiorno
+      
+    sensor.temperatura_attuale_cucina:
+      friendly_name: Cucina
+      
+    sensor.temperatura_attuale_camera:
+      friendly_name: Camera
+      
+    sensor.temperatura_attuale_cameretta:
+      friendly_name: Cameretta
+      
+    sensor.temperatura_attuale_bagno:
+      friendly_name: Bagno
